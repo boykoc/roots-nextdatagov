@@ -2,7 +2,7 @@
 <div class="page-header">
   <h1>Browse Topics</h1>
 </div>
-<?php
+<?php  
 
 $args = array(
 	'type'                     => 'post',
@@ -16,15 +16,18 @@ $args = array(
 	'include'                  => '',
 	'number'                   => '',
 	'taxonomy'                 => 'category',
-	'pad_counts'               => false
+	'pad_counts'               => false 
 
 );
 
 ?>
 
 <ul class="topics">
-<?php
-// 	$categories = get_categories($args);
+<?php 
+$ckan_access_pt = 'http://intra.stage.catalogue.ogo.tbs.gov.on.ca/dataset';
+//$ckan_access_pt = (get_option('ckan_default_server'));
+
+// 	$categories = get_categories($args); 
 // 	foreach ($categories as $category) {
 // 		$option = '<li class="topic-' . $category->category_nicename . '"><a href="/'.$category->category_nicename.'">';
 // 		$option .= "<i></i><span>{$category->cat_name}</span>";
@@ -34,49 +37,43 @@ $args = array(
 ?>
 
 
-	<li class="topic-food">
-		<a href="/food/"><i></i><span>Agriculture</span></a>
+	<li class="topic-jobs">
+		<a href="<?php echo $ckan_access_pt;?>?tags=Jobs+and+employment"><i></i><span>Jobs + Employment</span></a>
 	</li>
-	<li class="topic-climate">
-		<a href="/climate/"><i></i><span>Climate</span></a>
-	</li>
-    <li class="topic-consumer">
-        <a href="/consumer/"><i></i><span>Consumer</span></a>
-    </li>
-	<li class="topic-ecosystems">
-		<a href="/ecosystems/"><i></i><span>Ecosystems</span></a>
+	<li class="topic-driving">
+		<a href="<?php echo $ckan_access_pt;?>?tags=Driving+and+roads"><i></i><span>Driving + Roads</span></a>
 	</li>
 	<li class="topic-education">
-		<a href="/education/"><i></i><span>Education</span></a>
-	</li>
-	<li class="topic-energy">
-		<a href="/energy/"><i></i><span>Energy</span></a>
-	</li>
-	<li class="topic-finance">
-		<a href="/finance/"><i></i><span>Finance</span></a>
+		<a href="<?php echo $ckan_access_pt;?>?tags=Education+and+training"><i></i><span>Education + Training</span></a>
+	</li>	
+    <li class="topic-business">
+        <a href="<?php echo $ckan_access_pt;?>?tags=Business+and+economy"><i></i><span>Business + Economy</span></a>
+    </li>	
+	<li class="topic-environment">
+		<a href="<?php echo $ckan_access_pt;?>?tags=Environment+and+energy"><i></i><span>Environment + Energy</span></a>
 	</li>
 	<li class="topic-health">
-		<a href="/health/"><i></i><span>Health</span></a>
+		<a href="<?php echo $ckan_access_pt;?>?tags=Health+and+wellness"><i></i><span>Health + Wellness</span></a>
 	</li>
-	<li class="topic-local">
-		<a href="/local/"><i></i><span>Local Government</span></a>
+	<li class="topic-home">
+		<a href="<?php echo $ckan_access_pt;?>?tags=Home+and+community"><i></i><span>Home + Community</span></a>
 	</li>
-	<li class="topic-manufacturing">
-		<a href="/manufacturing/"><i></i><span>Manufacturing</span></a>
+	<li class="topic-law">
+		<a href="<?php echo $ckan_access_pt;?>?tags=Law+and+safety"><i></i><span>Law + Safety</span></a>
 	</li>
-	<li class="topic-maritime">
-		<a href="/maritime/"><i></i><span>Maritime</span></a>
+	<li class="topic-rural">
+		<a href="<?php echo $ckan_access_pt;?>?tags=Rural+and+north"><i></i><span>Rural + North</span></a>
 	</li>
-	<li class="topic-ocean">
-		<a href="/ocean/"><i></i><span>Ocean</span></a>
-	</li>
-	<li class="topic-safety">
-		<a href="/safety/"><i></i><span>Public Safety</span></a>
-	</li>
-	<li class="topic-research">
-		<a href="/research/"><i></i><span>Science &amp; Research</span></a>
-	</li>
-</ul>
+	<li class="topic-taxes">
+		<a href="<?php echo $ckan_access_pt;?>?tags=Taxes+and+benefits"><i></i><span>Taxes + Benefits</span></a>
+	</li>		
+	<li class="topic-travel">
+		<a href="<?php echo $ckan_access_pt;?>?tags=Travel+and+recreation"><i></i><span>Travel + Recreation</span></a>
+	</li>	
+	<li class="topic-arts">
+		<a href="<?php echo $ckan_access_pt;?>?tags=Arts+and+Culture"><i></i><span>Arts + Culture</span></a>
+	</li>		
+</ul> 
 
 </div><!--/.container-->
 

@@ -1,8 +1,9 @@
 <header>
+<?php $ckan_access_pt = (get_option('ckan_default_server')); ?>
 <div class="banner navbar navbar-default navbar-static-top yamm" role="banner">
   <div class="container">
-
-        <div class="searchbox-row skip-navigation">
+  
+        <div class="searchbox-row skip-navigation">   
             <div class="sr-only skip-link">
                 <a href="#main">Jump to Content</a>
             </div>
@@ -11,7 +12,7 @@
             <div>
                 <?php if(!is_front_page()): ?>
                 <?php get_search_form(); ?>
-                <?php endif; ?>
+                <?php endif; ?>  
             </div>
         </div>
 
@@ -22,24 +23,20 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="<?php echo home_url(); ?>/" alt="Data.gov"><h1 class="navbar-brand"><?php bloginfo('name'); ?></h1></a>
+            <a href="<?php echo home_url(); ?>/" alt="livedemosite.ca"><h1 class="navbar-brand"><?php bloginfo('name'); ?></h1></a>
         </div>
 
-        <nav class="collapse navbar-collapse" role="navigation">
+        <nav class="collapse navbar-collapse" role="navigation">    
             <?php
             if (has_nav_menu('primary_navigation')) :
                 wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav navbar-right', 'walker' => new Datagov_Nav_Walker));
             endif;
-            ?>
-        </nav>
-
+            ?>  
+        </nav> 
+       
   </div>
     <div id="external_disclaimer" class="tooltip" role="tooltip" aria-hidden="true">This link will direct you to an external website that may have different content and privacy policies from Data.gov.
     </div>
-</div>
-
-<div class="container hidden print-logo">
-    <img src="/app/themes/roots-nextdatagov/assets/img/logo.svg" />
 </div>
 
 <?php if(is_front_page()): ?>
@@ -59,7 +56,7 @@
     <div class="container">
         <div class="text-center getstarted">
             <h4><label for="search-header">Get Started<br>
-                    <small>Search over <a href="/metrics"><?php echo number_format(get_option('ckan_total_count', 186099)); ?> datasets</a>
+                    <small>Search over <a href="<?php echo $ckan_access_pt;?>"><?php echo number_format(get_option('ckan_total_count', 525)); ?> datasets</a>
                     </small>
                     <br/><i class="fa fa-caret-down"></i></label></h4>
         </div>
@@ -75,7 +72,7 @@
             <div class="page-header">
 
 
-                <?php if (is_category() || is_tax()): ?>
+                <?php if (is_category() OR is_tax()): ?>
                 <div class="tagline">
                     <?php echo category_description(); ?>
                 </div>

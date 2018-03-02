@@ -8,11 +8,8 @@ if (is_category()) {
 
 } else {
     $category = get_the_category();
-    $term_name = $term_slug = '';
-    if (isset($category[0])){
-      $term_name = $category[0]->cat_name;
-      $term_slug = $category[0]->slug;
-    }
+    $term_name = $category[0]->cat_name;
+    $term_slug = $category[0]->slug;
 }
 
 $args = array(
@@ -78,10 +75,10 @@ if ( ( $highlight_posts->have_posts() ) ):
 
 								<?php endif; ?>
 
-								<h2 class="entry-title" style="float:left;"><?php the_title(); ?></h2>
+								<h2 class="entry-title" style="width:750px;float:left;"><?php the_title(); ?></h2>
 								<?php if ( get_post_format() == 'image' ): ?>
-									<div class="dataset-link btn-right" style="clear:none;margin:0px; width:180px;">
-										<a class="btn btn-default"
+									<div class="dataset-link" style="clear:none;margin:0px; width:180px; float:right;">
+										<a class="btn btn-default pull-right"
 										   href="<?php the_field( 'link_to_dataset' ); ?>">
 											<span class="glyphicon glyphicon-download"></span> View this Dataset
 										</a>
@@ -109,7 +106,7 @@ if ( ( $highlight_posts->have_posts() ) ):
 				$checkFirst = 0;
 				?>
 				<div class="pull-right">
-                    <a href="/<?php echo( (isset( $term_slug ) && $term_slug) ? $term_slug.'/highlights' : 'highlights' ) ?>" class="more-link" style="color:#fff;">More Highlights</a>
+                    <a href="/<?php echo( isset( $term_slug ) ? $term_slug.'/highlights' : 'highlights' ) ?>" class="more-link" style="color:#fff;">More Highlights</a>
                 </div>
 			</div>
 		</div>

@@ -48,7 +48,7 @@ foreach ($organizations as $organization) {
         <?php the_content(); ?>
         </div>
         <div>
-            Total Agencies set-up in Data.gov to harvest from their agency Jsons: <?php echo $totalNumber; ?>
+            Total Agencies set-up in Ontario.ca/open to harvest from their agency Jsons: <?php echo $totalNumber; ?>
         </div>
         <?php foreach ($organizations as $organization): ?>
             <?php if (!$organization->name) {

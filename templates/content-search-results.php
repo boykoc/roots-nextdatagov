@@ -1,11 +1,6 @@
 <?php
-function sanitize_string($s) {
-    $result = preg_replace("/[^a-zA-Z0-9 '\-]+/", "", html_entity_decode($s, ENT_QUOTES));
-    return $result;
-}
 
-$querysearch = sanitize_string($_GET['q']);
-$query = filter_var(str_replace(array("'",'"'),'', $querysearch), FILTER_SANITIZE_STRING);
+$query = filter_var($_GET['q'], FILTER_SANITIZE_STRING);
 $group = (filter_var($_GET['group'], FILTER_SANITIZE_STRING) ) ? filter_var($_GET['group'], FILTER_SANITIZE_STRING) : "site" ;
 
 ?>
@@ -45,11 +40,7 @@ function usasearch_display_results($query = '', $group = ''){
 
 
     // Check if usasearch server responds successfully.
-    if (is_wp_error($result_response) || $result_response['response']['message'] != 'OK') {
-        if (is_wp_error($result_response))
-        {
-            error_log($result_response->get_error_message());
-        }
+    if ($result_response['response']['message'] != 'OK') {
         $error = 'Error connecting to search server.';
         return $error;
     }
@@ -241,14 +232,10 @@ function usasearch_fetch_results($query, $group = NULL, $page = 0) {
     $api_key = get_site_option('api_key', '') ? get_site_option('api_key', '') : '';
     $search_version = get_site_option('search_version', '');
     // Convert from zero-based numbering to one-based.
-
-    $page = intval($page);
-
-    if ($page != 0) {
+    if($page != 0)
         $page = $page;
-    } else {
+    else
         $page = 1;
-    }
 
     // TODO put site into a variable
     $scope = $group?"site:www.data.gov/$group+":"";
