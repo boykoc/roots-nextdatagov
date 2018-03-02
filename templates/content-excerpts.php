@@ -2,13 +2,21 @@
 
 
 	<div class="page-header">
-		<h1>Updates</h1>
+		<h2>Recently Added Datasets</h2>
 	</div>
 
 
 	<?php
+	function the_slug($echo=true){
+  $slug = basename(get_permalink());
+  do_action('before_slug', $slug);
+  $slug = apply_filters('slug_filter', $slug);
+  if( $echo ) echo $slug;
+  do_action('after_slug', $slug);
+  return $slug;
+}
 	$args = array(
-		'post_type'           => 'post',
+		'post_type'           => 'datasets',
 		'ignore_sticky_posts' => 1,
 		'cat'				  => '-33884',
 		'tax_query'           => array(
@@ -36,7 +44,7 @@
 				'operator' => 'NOT IN'
 			)
 		),
-		'posts_per_page'      => 3
+		'posts_per_page'      => 7
 	);
 
 	$new_query = new WP_Query( $args );
@@ -52,7 +60,7 @@
 						href="/<?php echo $category[0]->slug; ?>"><i></i><span><?php echo $category[0]->cat_name; ?></span></a>
 				</h5>
 
-				<h2 class="entry-title"><a id="<?php echo 'post-title-' . get_the_ID(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+				<h2 class="entry-title"><a id="<?php echo 'post-title-' . get_the_ID(); ?>" href="http://open-gov.eastus.cloudapp.azure.com:8080/dataset/<?php the_slug(); ?>"><?php the_title(); ?></a></h2>
 				<?php get_template_part( 'templates/entry-meta-author' ); ?>
 			</header>
 			<div class="entry-summary">
@@ -93,7 +101,7 @@
 		'meta_query'          => array(
 			array(
 				'key'     => 'twitter_handle',
-				'value'   => 'usdatagov',
+				'value'   => 'ONgov',
 				'compare' => '='
 			)
 		),

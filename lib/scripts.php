@@ -14,7 +14,7 @@ function roots_scripts() {
 	wp_enqueue_style('datagov-googlefonts', '//fonts.googleapis.com/css?family=Abel|Lato:100,300,400,700' );
 	//wp_enqueue_style('fontawesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
 
-	wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '3c5deb08e1805f39213846d8a3a6ff74');
+	wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '23706602fbbce859bd940336a8297921');
 	wp_enqueue_style('rei_css', get_template_directory_uri() . '/assets/css/rei.css', false, '' );
 
 
@@ -23,7 +23,7 @@ function roots_scripts() {
 	// It's kept in the header instead of footer to avoid conflicts with plugins.
 	if ( ! is_admin() && current_theme_supports( 'jquery-cdn' ) ) {
 		wp_deregister_script( 'jquery' );
-		wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js', false, null, false );
+		wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js', false, null, false );
 		add_filter( 'script_loader_src', 'roots_jquery_local_fallback', 10, 1 );
 	}
 
@@ -34,11 +34,10 @@ function roots_scripts() {
 	wp_register_script('respond', get_template_directory_uri() . '/assets/js/vendor/respond.min.js', false, null, false );
 	wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.7.1.min.js', false, null, false );
 	wp_register_script('sticky', get_template_directory_uri() . '/assets/js/vendor/jquery.sticky.js', false, null, false );
-	wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', false, '9ab03eaa29bcfa40a4e8e34e7afda278', true );
-    //wp_register_script( 'datatables', 'https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js', false, null, false );
-    //wp_register_script( 'fixedcolumns', 'https://cdn.datatables.net/fixedcolumns/3.1.0/js/dataTables.fixedColumns.min.js', false, null, false );
-    //wp_register_script( 'scroller', 'https://cdn.datatables.net/scroller/1.3.0/js/dataTables.scroller.min.js', false, null, false );
-    wp_register_script( 'datatables', 'https://cdn.datatables.net/v/dt/fc-3.2.3/sc-1.4.3/datatables.min.js', false, null, false );
+	wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', false, 'ef6b28179899ea04cf86dbbfc9223298', true );
+    wp_register_script( 'datatables', 'https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js', false, null, false );
+    wp_register_script( 'fixedcolumns', 'https://cdn.datatables.net/fixedcolumns/3.1.0/js/dataTables.fixedColumns.min.js', false, null, false );
+    wp_register_script( 'scroller', 'https://cdn.datatables.net/scroller/1.3.0/js/dataTables.scroller.min.js', false, null, false );
 
 
 
@@ -46,8 +45,8 @@ function roots_scripts() {
 	wp_enqueue_script('modernizr' );
 	wp_enqueue_script('jquery' );
     wp_enqueue_script('datatables' );
-    //wp_enqueue_script('fixedcolumns' );
-    //wp_enqueue_script('scroller' );
+    wp_enqueue_script('fixedcolumns' );
+    wp_enqueue_script('scroller' );
 	// wp_enqueue_script( 'sticky' );
 	wp_enqueue_script('roots_scripts' );
 	wp_enqueue_script('ext_link_handler', get_template_directory_uri() . '/assets/js/ext-link-handler.js', array(
@@ -58,8 +57,8 @@ function roots_scripts() {
 //        'jquery',
 //        'wpp-frontend'
 //    ), '' );
-	wp_enqueue_script('Federated-Analytics', 'https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA', false, null );
-//	wp_enqueue_script('cycle_all', get_template_directory_uri() . '/assets/js/jquery.cycle.all.js', array( 'jquery' ), '' );
+	wp_enqueue_script('Federated-Analytics', 'https://analytics.usa.gov/dap/dap.min.js?agency=GSA', false, null );
+	wp_enqueue_script('cycle_all', get_template_directory_uri() . '/assets/js/jquery.cycle.all.js', array( 'jquery' ), '' );
 }
 
 add_action( 'wp_enqueue_scripts', 'roots_scripts', 100 );
@@ -69,7 +68,7 @@ function roots_jquery_local_fallback( $src, $handle = null ) {
 	static $add_jquery_fallback = false;
 
 	if ( $add_jquery_fallback ) {
-		echo '<script>window.jQuery || document.write(\'<script src="' . get_template_directory_uri() . '/assets/js/vendor/jquery-1.12.0.min.js"><\/script>\')</script>' . "\n";
+		echo '<script>window.jQuery || document.write(\'<script src="' . get_template_directory_uri() . '/assets/js/vendor/jquery-1.11.3.min.js"><\/script>\')</script>' . "\n";
 		$add_jquery_fallback = false;
 	}
 

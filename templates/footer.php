@@ -73,18 +73,14 @@ $ckan_default_server = strstr($ckan_default_server, '://') ? $ckan_default_serve
                                     $class = 'fa fa-twitter';
                                     break;
                                 case 'github':
-                                    $class = 'fa fa-github';
+                                    $class = 'fa fa-github tooltips';
                                     break;
                                 case 'stack exchange':
                                     $class = 'fa fa-stack-exchange';
                                     break;
                             }
 
-                            $a_title = '';
-                            if (trim($attribute)) {
-                                $a_title = 'title="'.esc_html(trim($attribute)).'"';
-                            }
-                            $menu_list .= '<li><a href="' . $url . '" '.$a_title.'><i class="' . $class . '" ></i><span>' . $title . '</span></a></li>' . "\n";
+                            $menu_list .= '<li><a class="tooltips" href="' . $url . '" title="'.$attribute.'"><i class="' . $class . '" ></i><span>' . $title . '</span></a></li>' . "\n";
                         }
 
                         $menu_list .= '</ul>';
