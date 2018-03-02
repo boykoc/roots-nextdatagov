@@ -1,57 +1,71 @@
-# Data.gov  
-[![Stories in Ready](https://badge.waffle.io/gsa/data.gov.png?label=ready&title=Ready)](https://waffle.io/gsa/data.gov)
+# [Roots Theme](http://roots.io/)
 
-* [Current Deployment](https://github.com/GSA/catalog-deploy)
-* [Current Test/Dev](https://github.com/GSA/catalog-app)
+Roots is a WordPress starter theme based on [HTML5 Boilerplate](http://html5boilerplate.com/) & [Bootstrap](http://getbootstrap.com/) that will help you make better themes.
 
-> Contribution or Collaboration on any code repository is encouraged; while we prefer technical questions be reserved to Github (preferably to the repositories above). We are equally as happy to take any feedback through Github as Github Issues or Pull Requests on any repository. We are always looking for feedback, feature requests, or technical inquiries on this repository or by email at datagov**@**gsa.gov. If you are a human that considers themselves or aspires to be a developer, security engineer, designer, editor/writer, or general innovator; we encourage you to take initiative and participate.
+* Source: [https://github.com/roots/roots](https://github.com/roots/roots)
+* Home Page: [http://roots.io/](http://roots.io/)
+* Twitter: [@retlehs](https://twitter.com/retlehs)
+* Newsletter: [Subscribe](http://roots.io/subscribe/)
+* Forum: [http://discourse.roots.io/](http://discourse.roots.io/)
 
-----
+## Installation
 
-[Data.gov](http://data.gov) is an open data website created by the [U.S. General Services Administration](https://github.com/GSA/) that is based on two robust open source projects: [CKAN](http://ckan.org) and [WordPress](http://wordpress.org). The data catalog at [catalog.data.gov](https://catalog.data.gov) is powered by CKAN, while the content seen at [Data.gov](http://Data.gov) is powered by WordPress.  
-        
-**This repository provides the [issue tracker](https://github.com/GSA/data.gov/issues) for all code, bugs, and feature requests related to Data.gov.** Currently the repository is only used for source version control on the code for the WordPress template, but you will also find pointers to the relevant CKAN code and additional resources documented below.
+Clone the git repo - `git clone git://github.com/roots/roots.git` - or [download it](https://github.com/roots/roots/zipball/master) and then rename the directory to the name of your theme or website. [Install Grunt](http://gruntjs.com/getting-started), and then install the dependencies for Roots contained in `package.json` by running the following from the Roots theme directory:
 
-### CKAN
+```
+npm install
+```
 
-* **CKAN.** The Data.gov team recommends the [latest version of CKAN](http://ckan.org/developers/docs-and-download/).
-* **Data.gov CKAN.** The code powering the Data.gov instance of CKAN. 
-    * [release-datagov](https://github.com/GSA/ckan/tree/release-datagov) - The main development branch used for the current [catalog.data.gov](https://catalog.data.gov).
-    * [GSA/ckanext-geodatagov](https://github.com/GSA/ckanext-geodatagov) - Most data.gov specific CKAN customizations are contained within this extension, but the extension also provides additional geospatial capabilities.  
-    * [ckanext-datagovtheme](https://github.com/GSA/ckanext-datagovtheme) - The CKAN theme for catalog.data.gov
-* **Extensions.** The Data.gov team has developed several CKAN extensions, but these are still in the process of being packaged for more widespread use. The [full list of installed extensions can be seen via the CKAN API](http://catalog.data.gov/api/util/status). Custom extensions include:
-   * [GSA/ckanext-datajson](https://github.com/GSA/ckanext-datajson) - A CKAN extension for [Project Open Data](https://project-open-data.github.io) /data.json harvesting and publishing. 
-   * [GSA/USMetadata](https://github.com/GSA/USMetadata) - A CKAN extension to support the [Project Open Data](https://project-open-data.github.io) metadata schema within the CKAN user interface. 
-* **Other Tools**  
-   * [GSA/ckan-php-client](https://github.com/GSA/ckan-php-client) - A CKAN php client for Data.gov.
-   * [GSA/ckan-php-manager](https://github.com/GSA/ckan-php-manager) - A CKAN php manager for Data.gov.    
-* **Deployment.** We are in the process of improving documentation and hope to provide build scripts and configurations for tools like [Vagrant](http://www.vagrantup.com/) to make setting up the Data.gov CKAN easier for others.  
+Reference the [theme activation](http://roots.io/roots-101/#theme-activation) documentation to understand everything that happens once you activate Roots.
 
-### WordPress
+## Theme Development
 
-* **WordPress.** The Data.gov team recommends the [latest version of WordPress](http://wordpress.org/download/).
-* **Data.gov WordPress template.** The code powering the Data.gov WordPress template.
-    * [GSA/data.gov](https://github.com/GSA/data.gov) or *this repository*. The source version control of the Data.gov WordPress template. The theme is provided in the `/themes/` folder. The theme is based on [roots.io](http://roots.io/starter-theme/).
-* **Plugins.** See the routinely updated [plugins](plugins.md) page for a list of all the plugins used on [Data.gov](https://www.data.gov/).
-    * [GSA/datagov-custom](https://github.com/GSA/datagov-custom) - Most data.gov specific customizations are contained within this extension
-* **Deployment.** Download the [latest version of WordPress](http://wordpress.org/download/). This is a standard WordPress install, so please refer to the [WordPress Docs](http://codex.wordpress.org/Installing_WordPress). In the near future we hope to release the configuration for installing the Data.gov WordPress using [WordPress CLI](http://wp-cli.org/). 
+After you've installed Grunt and ran `npm install` from the theme root, use `grunt watch` to watch for updates to your LESS and JS files and Grunt will automatically re-build as you write your code.
 
-### Additional Data.gov Resources
-* **Data.gov/Developers.**  In addition to this repository, please be sure to look at the Data.gov Developers section for more updates and resources, including information on Data.gov's CKAN API: http://data.gov/developers/
-* **Design.** Design assets for Data.gov.
-    * [GSA/datagov-design](https://github.com/GSA/datagov-design) - The source graphic files for logo, icons, layout.
-* **Communications.** Communication and publishing systems that power Data.gov.
-    * [GSA/idm](https://github.com/GSA/idm) - Identity Management for Data.gov and related systems. 
-    * [GSA/open311-simple-crm](https://github.com/GSA/open311-simple-crm) - A simple CRM application built with the Open311 API. 
-* **Harvest Tools.** Tools to support Data.gov harvesting and compliance with the format and metadata schema requirements of Project Open Data. *Learn more at [Project Open Data](https://project-open-data.cio.gov/).*
-    * [GSA/enterprise-data-inventory](https://github.com/GSA/enterprise-data-inventory) - A CKAN based enterprise data management system for private and public data management available at [inventory.data.gov](https://inventory.data.gov/).
-    * [GSA/project-open-data-dashboard](https://github.com/GSA/project-open-data-dashboard) - An automated dashboard assessing agency and department compliance with Project Open Data.
-* **Style Guide.** A content style guide for Data.gov.
-    * [GSA/data.gov-styleguide](https://github.com/GSA/data.gov-styleguide) - A Style Guide for prose on Data.gov, heavily inspired by UK.gov's style guide.
+## Configuration
 
-## Ways to Contribute
-We're so glad you're thinking about contributing to Data.gov!
+Edit `lib/config.php` to enable or disable support for various theme functions and to define constants that are used throughout the theme.
 
-Before contributing to Data.gov we encourage you to read our [CONTRIBUTING](https://github.com/GSA/data.gov/blob/master/CONTRIBUTING.md) guide, our [LICENSE](https://github.com/GSA/data.gov/blob/master/LICENSE.md), and our README (you are here), all of which should be in this repository. If you have any questions, you can email the Data.gov team at [datagov@gsa.gov](mailto:datagov@gsa.gov).
+Edit `lib/init.php` to setup custom navigation menus and post thumbnail sizes.
 
+## Documentation
 
+### [Roots Docs](http://roots.io/docs/)
+
+* [Roots 101](http://roots.io/roots-101/) — A guide to installing Roots, the files and theme organization
+* [Theme Wrapper](http://roots.io/an-introduction-to-the-roots-theme-wrapper/) — Learn all about the theme wrapper
+* [Build Script](http://roots.io/using-grunt-for-wordpress-theme-development/) — A look into the Roots build script powered by Grunt
+* [Roots Sidebar](http://roots.io/the-roots-sidebar/) — Understand how to display or hide the sidebar in Roots
+
+## Features
+
+* Organized file and template structure
+* HTML5 Boilerplate's markup along with ARIA roles and microformat
+* Bootstrap
+* [Grunt build script](http://roots.io/using-grunt-for-wordpress-theme-development/)
+* [Theme activation](http://roots.io/roots-101/#theme-activation)
+* [Theme wrapper](http://roots.io/an-introduction-to-the-roots-theme-wrapper/)
+* Root relative URLs
+* [Clean URLs with a plugin](https://github.com/roots/roots-rewrites) (no more `/wp-content/`)
+* All static theme assets are rewritten to the website root (`/assets/*`)
+* Cleaner HTML output of navigation menus
+* Cleaner output of `wp_head` and enqueued scripts/styles
+* Nice search (`/search/query/`)
+* Image captions use `<figure>` and `<figcaption>`
+* Example vCard widget
+* Posts use the [hNews](http://microformats.org/wiki/hnews) microformat
+* [Multilingual ready](http://roots.io/wpml/) (Brazilian Portuguese, Bulgarian, Catalan, Danish, Dutch, English, Finnish, French, German, Hungarian, Indonesian, Italian, Korean, Macedonian, Norwegian, Polish, Russian, Simplified Chinese, Spanish, Swedish, Traditional Chinese, Turkish, Vietnamese, Serbian)
+
+## Contributing
+
+Everyone is welcome to help [contribute](CONTRIBUTING.md) and improve this project. There are several ways you can contribute:
+
+* Reporting issues (please read [issue guidelines](https://github.com/necolas/issue-guidelines))
+* Suggesting new features
+* Writing or refactoring code
+* Fixing [issues](https://github.com/roots/roots/issues)
+* Replying to questions on the [forum](http://discourse.roots.io/)
+
+## Support
+
+Use the [Roots Discourse](http://discourse.roots.io/) to ask questions and get support.

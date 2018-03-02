@@ -1,34 +1,121 @@
-## Welcome!
+# Contributing to Roots Theme
 
-We're so glad you're thinking about contributing to Data.gov!
+Please take a moment to review this document in order to make the contribution
+process easy and effective for everyone involved.
 
-Before contributing, we encourage you to read our CONTRIBUTING guide (you are here), our [LICENSE](https://github.com/GSA/data.gov/blob/master/LICENSE.md), and our [README](https://github.com/GSA/data.gov/blob/master/README.md), all of which should be in this repository. If you have any questions, you can email the Data.gov team at [datagov@gsa.gov](mailto:datagov@gsa.gov).
+Following these guidelines helps to communicate that you respect the time of
+the developers managing and developing this open source project. In return,
+they should reciprocate that respect in addressing your issue or assessing
+patches and features.
 
-## Ways to Contribute
 
-**The Data.gov team manages all Data.gov updates, bugs, and feature additions via GitHub's public [issue tracker](https://github.com/GSA/data.gov/issues) in this repository.** 
+## Using the issue tracker
 
-If you do not already have a GitHub account, you can [sign up for GitHub here](https://github.com/). In the spirit of open source software, everyone is encouraged to help improve this project. Here are some ways you can contribute:
-- by reporting bugs
-- by suggesting new features
-- by translating content to a new language
-- by writing or editing documentation
-- by writing specifications
-- by writing code and documentation (**no pull request is too small**: fix typos, add code comments, clean up inconsistent whitespace)
-- by reviewing [pull requests](https://github.com/GSA/data.gov/pulls).
-- by closing issues
+The issue tracker is the preferred channel for [bug reports](#bugs),
+[features requests](#features) and [submitting pull
+requests](#pull-requests), but please respect the following restrictions:
 
-#### Submit Great Issues
-* Before submitting a new [issue](https://github.com/GSA/data.gov/issues), check to make sure [a similar issue isn't already open](https://github.com/GSA/data.gov/issues?q=is%3Aissue+is%3Aopen). If one is, contribute to that issue thread with your feedback.
-* When submitting a bug report, please try to provide as much detail as possible, i.e. a screenshot or [gist](https://gist.github.com/) that demonstrates the problem, the technology you are using, and any relevant links. 
+* Please **do not** use the issue tracker for personal support requests (use the
+  [Roots Discourse](http://discourse.roots.io/)).
 
-#### Ready for your Help 
-Issues labeled :sparkles:[`help wanted`](https://github.com/GSA/data.gov/labels/help%20wanted):sparkles: make it easy for you to find ways you can contribute today. 
+* Please **do not** derail or troll issues. Keep the discussion on topic and
+  respect the opinions of others.
 
-## Public Domain
 
-This project constitutes a work of the United States Government and is not subject to domestic copyright protection under 17 USC § 105. Additionally, we waive copyright and related rights in the work worldwide through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/).
+<a name="bugs"></a>
+## Bug reports
 
-All contributions to this project will be released under the CC0
-dedication. By submitting a pull request, you are agreeing to comply
-with this waiver of copyright interest.
+A bug is a _demonstrable problem_ that is caused by the code in the repository.
+Good bug reports are extremely helpful - thank you!
+
+Guidelines for bug reports:
+
+1. **Use the GitHub issue search** &mdash; check if the issue has already been
+   reported.
+
+2. **Check if the issue has been fixed** &mdash; try to reproduce it using the
+   latest `master` or development branch in the repository.
+
+3. **Isolate the problem to Roots** &mdash; make sure that the code in the Roots
+repository is _definitely_ responsible for the issue. Switch to a core WordPress
+theme (such as Twenty Thirteen) to confirm problems before reporting an issue.
+Make sure you have reproduced the bug with all plugins disabled. Any issues
+related to HTML5 Boilerplate or Bootstrap should be reported to their respected
+repositories and follow their contributing guidelines.
+
+A good bug report shouldn't leave others needing to chase you up for more
+information. Please try to be as detailed as possible in your report.
+
+
+<a name="features"></a>
+## Feature requests
+
+Feature requests are welcome. But take a moment to find out whether your idea
+fits with the scope and aims of Roots. It's up to *you* to make a strong
+case to convince the Roots developers of the merits of this feature. Please
+provide as much detail and context as possible.
+
+
+<a name="pull-requests"></a>
+## Pull requests
+
+Good pull requests - patches, improvements, new features - are a fantastic
+help. They should remain focused in scope and avoid containing unrelated
+commits.
+
+**Please ask first** before embarking on any significant pull request (e.g.
+implementing features, refactoring code), otherwise you risk spending a lot of
+time working on something that the developers might not want to merge into Roots.
+
+Please adhere to the coding conventions used throughout the project (indentation,
+comments, etc.).
+
+Adhering to the following this process is the best way to get your work
+included in Roots:
+
+1. [Fork](http://help.github.com/fork-a-repo/) Roots, clone your fork,
+   and configure the remotes:
+
+   ```bash
+   # Clone your fork of the repo into the current directory
+   git clone https://github.com/<your-username>/<repo-name>
+   # Navigate to the newly cloned directory
+   cd <repo-name>
+   # Assign the original repo to a remote called "upstream"
+   git remote add upstream https://github.com/<upsteam-owner>/<repo-name>
+   ```
+
+2. If you cloned a while ago, get the latest changes from upstream:
+
+   ```bash
+   git checkout <dev-branch>
+   git pull upstream <dev-branch>
+   ```
+
+3. Create a new topic branch (off the main project development branch) to
+   contain your feature, change, or fix:
+
+   ```bash
+   git checkout -b <topic-branch-name>
+   ```
+
+4. Commit your changes in logical chunks. Please adhere to these [git commit
+   message guidelines](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
+   or your code is unlikely be merged into the main project. Use Git's
+   [interactive rebase](https://help.github.com/articles/interactive-rebase)
+   feature to tidy up your commits before making them public.
+
+5. Locally merge (or rebase) the upstream development branch into your topic branch:
+
+   ```bash
+   git pull [--rebase] upstream <dev-branch>
+   ```
+
+6. Push your topic branch up to your fork:
+
+   ```bash
+   git push origin <topic-branch-name>
+   ```
+
+10. [Open a Pull Request](https://help.github.com/articles/using-pull-requests/)
+    with a clear title and description.
